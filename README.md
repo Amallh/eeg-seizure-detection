@@ -1,12 +1,12 @@
 
 # EEG Seizure Detection Using Classical and Deep Learning Methods
 
-## 🧠 Overview
+##  Overview
 
 This project develops a pipeline for **automatic seizure detection** from multichannel EEG signals.
 It combines **classical machine learning** (PCA, CSP, SVM, XGBoost) with **deep learning (CNN)** to analyze spatial and temporal brain patterns and identify seizure events.
 
-## 📊 Dataset Description
+## Dataset Description
 
 * **Total segments:** 3546 EEG samples
 * **Channels:** 23
@@ -16,7 +16,7 @@ It combines **classical machine learning** (PCA, CSP, SVM, XGBoost) with **deep 
 Each segment represents a short EEG window, sampled at 256 Hz.
 
 
-## ⚙️ Preprocessing
+##  Preprocessing
 
 * **Noise filtering:** Bandpass filter (1–70 Hz)
 * **Standardization:** Mean–variance normalization per channel
@@ -24,7 +24,7 @@ Each segment represents a short EEG window, sampled at 256 Hz.
 
 ---
 
-## 🧩 Methods and Pipelines
+## Methods and Pipelines
 
 ### 1. **PCA and Logistic Regression**
 
@@ -66,19 +66,19 @@ Each segment represents a short EEG window, sampled at 256 Hz.
 
 ---
 
-## 🧭 Interpretability & Analysis
+##  Interpretability & Analysis
 
-### 🧠 Spatial Importance (Occlusion Analysis)
+###  Spatial Importance (Occlusion Analysis)
 
 * Each EEG channel was zeroed out to test its impact on accuracy.
 * **Most informative channels:** 19, 21, 15, 2
 * **Least informative channels:** 7, 5, 8, 17
 
-### 🕒 Temporal Discrimination
+###  Temporal Discrimination
 
 * A sliding window (size = 64 samples) revealed that **timepoints 50–150** are most informative for seizure detection.
 
-### 🔥 CSP + SVM Pipeline
+##  CSP + SVM Pipeline
 
 * Common Spatial Pattern (CSP, 4 components) → StandardScaler → SVM (RBF kernel).
 * Achieved **80.14% accuracy** and **81.42% F1-score**.
